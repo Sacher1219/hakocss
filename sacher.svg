@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg version="1.1" viewBox="0 0 748.12 431.57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
+	<filter id="hover">
+	 <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 20  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
   <filter id="f" x="-.034412" y="-.079319" width="1.0688" height="1.1586" style="color-interpolation-filters:sRGB">
    <feGaussianBlur stdDeviation="6.3662379"/>
   </filter>
