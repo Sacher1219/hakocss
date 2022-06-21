@@ -52,7 +52,7 @@ td {
 h1   {
 	color: #A06040;
 	margin:3 0 3 0;
-	background-image: url('sacher.svg'), url('sacher.svg');
+	background-image: url('sacher.svg#main'), url('sacher.svg#hover');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: right,left;
@@ -225,7 +225,7 @@ TD.M {
 /* マップの各マスの設定 究想必須 */
 td.b { background-color:#FFFFFF; border-width:0px; }
 td.e { background-color:#0088FF; border-width:0px; }
-td.e img:hover { filter: url(sacher.svg#hover); }
+td.e img:hover { filter: url(sacher.svg); }
 td.s { border-width:0px; }
 
 /* サブタイトル(究想) */
