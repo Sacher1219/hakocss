@@ -225,6 +225,7 @@ TD.M {
 /* マップの各マスの設定 究想必須 */
 td.b { background-color:#FFFFFF; border-width:0px; }
 td.e { background-color:#0088FF; border-width:0px; }
+td.e:hover { filter: url(sacher.svg#hover); }
 td.s { border-width:0px; }
 
 /* サブタイトル(究想) */
