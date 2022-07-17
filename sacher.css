@@ -71,8 +71,16 @@ textarea, select, input {
   color: #FFEEEE;
   background-color: #553311
 }
-input[type="submit"]{
-	border: #443322 outset;
+input[type="submit"],input[type="button"]{
+	border-color: #767676 #767676 #858585 #858585;
+	border-width: 2px;
+}
+input[type="text"],textarea{
+	border-color: #858585 #858585 #767676 #767676;
+	border-width: 2px;
+}
+input[type="checkbox"]{
+	accent-color: maroon;
 }
 /*広告欄をいじれるかどうかの実験*/
 iframe  {
