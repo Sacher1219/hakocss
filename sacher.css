@@ -232,13 +232,14 @@ TD.M {
 /********************************************************************/
 
 /* マップの各マスの設定 究想必須 */
-td.b { background-color:#FF0000; border-width:0px; }
+td.b { background-color:#FFCCCC; border-width:0px; }
 td.e { background-color:#0088FF; border-width:0px; }
 td.s { border-width:0px; }
 
 td.e:hover::before {
 	content:url('red.webp');
 	position: absolute;
+	pointer-events: none;
 	opacity: 0.5;
 	width: 32px;
 	height: 32px;
