@@ -19,6 +19,12 @@ a.M       {
   font-size:9pt;
 }/*ポップアップメニューなど*/
 
+::selection{
+	text-shadow: none;
+	background: maroon;
+	color: chocolate;
+}
+
 body{
   color: #EEDDCC;
   background-color: #331810;/* #EEFFFF;*/
