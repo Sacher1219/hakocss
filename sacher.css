@@ -114,7 +114,6 @@ iframe  {
 #newIsland   { white-space : nowrap; } /* 新しい島を探す */
 #changeInfo  { white-space : nowrap; } /* 島の名前とパスワードの変更 */
 #hakoSkin    { white-space : normal; } /* 箱庭スキンの設定 */
-#RecentlyLog { white-space : nowrap; } /* 最近の出来事 */
 #HistoryLog  { white-space : nowrap; } /* 発見の記録 */
 /* 開発画面・観光画面 */
 #islandInfo  { white-space : nowrap; text-align : center; } /* 島の情報 */
@@ -262,7 +261,16 @@ td.e:hover::before {
 #changeInfo2 { white-space : nowrap; }
 
 /* 各島の近況  (究想)*/
-#RecentlyLog2{ white-space : nowrap; margin-left: 30px; }
+#RecentlyLog2{ 
+  white-space : nowrap;
+	height: 50vh;
+	overflow: scroll;
+}
+#RecentlyLog2 .big{
+	position: sticky;
+	top: 0;
+	background: #331810C0;
+}
 
 /* 順位表サブ見出し (例 TitleCellとInfoCellの中間色) (究想)*/
 .SubTCell    { background-color: inherit; text-align:center; }
