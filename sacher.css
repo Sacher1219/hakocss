@@ -264,7 +264,7 @@ td.e:hover::before {
 #RecentlyLog2{ 
   white-space : nowrap;
 	height: 50vh;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 #RecentlyLog2 .big{
 	position: sticky;
