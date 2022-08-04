@@ -2,21 +2,39 @@
 /*  究想の箱庭ver5.x、ver4.5x兼用標準スタイルシート                 */
 /********************************************************************/
 
+/*どの要素がどの部分に対応しているかはブラウザ付属の開発者ツールなどでhtmlを覗けばわかる*/
+
 @charset "Shift_JIS";
 
 /*ＪＡＶＡスクリプト版「箱庭諸島」-ver1.11- との共有部分 */
 
-a:link    { color: #0000FF;       }
-a:visited { color: #0000FF;       }
+a:link    { color: #EE1111;       }
+a:visited { color: #CC3333;       }
 a:active  { color: #FF0000;       }
 a:hover   { text-decoration:underline;}
-a.M       { text-decoration:none;font-size:9pt;}
+a.M       {
+  text-decoration:none;
+  text-shadow:none;
+  color: #A06040;
+  font-size:9pt;
+}/*ポップアップメニューなど*/
+
+::selection{
+	text-shadow: none;
+	background: maroon;
+	color: chocolate;
+}
 
 body{
-  color: #000000;
-  background-color: #EEFFFF;
+  color: #EEDDCC;
+  background-color: #331810;/* #EEFFFF;*/
+  text-shadow:
+            1px 1px 1px #331810, -1px -1px 1px #331810,
+           -1px 1px 1px #331810,  1px -1px 1px #331810;
   margin-top:3px;
-  background-image: url('../skb_background.gif');
+  /*background-image: url('sacher.svg');*/
+  background-repeat:  no-repeat;
+  background-position: left 10% top 10%; 
 }
 table {
   border-style:none;
@@ -28,19 +46,46 @@ td,th {
 th {
   border-style:outset;
   border-width:1px;
-  border-color:#CCCCFF;
+  border-color:#FFCCCC;
   filter:blur(direction=135,strength=2);
 }
 td {
   border-style:outset;
   border-width:1px;
-  border-color:#CCCCFF;
+  border-color:#FFCCCC;
 }
-h1   { color: #4444FF; margin:3 0 3 0;}
+/*h1:「ターンXXXXX　(某月)　○○島開発計画」の部分（ただし「開発計画」以外は.numberと.islNameで上書きされる）*/
+h1   {
+	color: #A06040;
+	margin:3 0 3 0;
+	background-image: url('sacher.svg'), url('sacher.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right,left;
+}
+/*h2: 用途不明*/
 h2   { color: #4444FF; margin:3 0 3 0;}
-hr { border		: dashed #4169E1 1px;}
+hr { border		: double #E16941 1px;}/*区切り線*/
 p{margin:3px 0 3px 0;}
-
+textarea, select, input {
+  color: #FFEEEE;
+  background-color: #553311
+}
+input[type="submit"],input[type="button"]{
+	border-color: #767676 #767676 #858585 #858585;
+	border-width: 2px;
+}
+input[type="text"],textarea{
+	border-color: #858585 #858585 #767676 #767676;
+	border-width: 2px;
+}
+input[type="checkbox"]{
+	accent-color: maroon;
+}
+/*広告欄をいじれるかどうかの実験*/
+iframe  {
+  transform: rotateY( 180deg );
+}
 
 /* リンク(ヘッダ) */
 #LinkHead    {
@@ -55,7 +100,7 @@ p{margin:3px 0 3px 0;}
   border      : dashed #AABBCC 1px;
   width       : 450px;
   margin-left : 0;
-  background-color: #EEFFFF;
+  background-color: transparent;
   font-size:0.9em;
 }
 
@@ -69,7 +114,6 @@ p{margin:3px 0 3px 0;}
 #newIsland   { white-space : nowrap; } /* 新しい島を探す */
 #changeInfo  { white-space : nowrap; } /* 島の名前とパスワードの変更 */
 #hakoSkin    { white-space : normal; } /* 箱庭スキンの設定 */
-#RecentlyLog { white-space : nowrap; } /* 最近の出来事 */
 #HistoryLog  { white-space : nowrap; } /* 発見の記録 */
 /* 開発画面・観光画面 */
 #islandInfo  { white-space : nowrap; text-align : center; } /* 島の情報 */
@@ -97,7 +141,7 @@ p{margin:3px 0 3px 0;}
 	border		: solid #008B8B;
 	border-width	: 0px 0px 1px 0px;
 	width		: 650px;
-	background-image: url('../skb_bg_title.gif');
+	/*background-image: url('../skb_bg_title.gif');*/
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -113,35 +157,38 @@ p{margin:3px 0 3px 0;}
 
 .islName, .islName2, .number, .head, .command, .disaster, .lbbsSS, .lbbsOW,
 .attention, .money, .food{ font-weight: bold; }
-.islName   { color: #A06040;        } /* 島の名前など */
+.islName   { color: #FF4444;        } /* 島の名前など */
 .islName2  { color: #808080;        } /* 薄くなった島の名前 */
-.number    { color: #0000FF;        } /* 順位の番号など */
-.head      { color: #000080;        } /* 順位表における見だし */
-.command   { color: #D08000;        } /* 開発計画名 */
-.disaster  { color: #FF0000;        } /* 災害 */
-.lbbsSS    { color: #0000FF;        } /* 観光者通信（観光者） */
-.lbbsOW    { color: #FF0000;        } /* 観光者通信（オーナ） */
-.attention { color: #FF0000;        } /* 注意 */
-.normal    { color: #000000;        } /* 通常の文字色 */
+.number    { color: #B05533;        } /* 各種表の番号など */
+.head      { color: #A06040;        } /* 各種表における見だし */
+.command   { color: #D08030;        } /* 開発計画名 */
+.disaster  { color: #EE1100;        } /* 災害 */
+.lbbsSS    { color: #C07050;        } /* 観光者通信（観光者） */
+.lbbsOW    { color: #C0583A;        } /* 観光者通信（オーナ） */
+.attention { color: #EE1100;        } /* 注意 */
+.normal    { color: #FFEEEE;        } /* 通常の文字色 */
 /* 背景色 */
-.TitleCell   { background-color: #CCFFCC; padding:3px; } /* 順位表見出し */
-.NumberCell  { background-color: #CCFFCC;        } /* 順位表順位 */
-.NameCell    { background-color: #CCFFFF;        } /* 順位表島の名前 */
-.InfoCell    { background-color: #CCFFFF;text-align:right } /* 順位表島の情報 */
-.CommentCell { background-color: #CCFFCC;        } /* 順位表コメント欄 */
-.InputCell   { background-color: #CCFFCC; font-size:0.9em; } /* 開発計画フォーム */
-.MapCell     { background-color: #CCFFCC;        } /* 開発計画地図 */
-.CommandCell { background-color: #CCFFCC;        } /* 開発計画入力済み計画 */
-.PopupCell   { background-color: #E0FFFF;        } /* Popup コマンド入力欄 */
+.TitleCell, .NumberCell, .NameCell, .InfoCell{ background-color: inherit;}
+.InputCell, .MapCell, .CommandCell{ background-color: transparent;}
+.TitleCell   { padding:3px; } /* 諸表見出し */
+.NumberCell  { } /* 諸表数値 */
+.NameCell    { } /* 諸表島名 */
+.InfoCell    { text-align:right } /* 諸表データ */
+.CommentCell { background-color: #CCFFCC;        } /* 諸表コメント欄 */
+.InputCell   { font-size:0.9em; } /* 開発計画を入力するやつ（を囲ってるでかい四角） */
+.MapCell     { } /* 開発計画地図（を囲ってるでかい四角） */
+.CommandCell { } /* 入力中・入力済みの開発計画（を囲ってるでかい四角） */
+.PopupCell   { background-color: #553311; /*z-index: 1;*/       } /* Popup コマンド入力欄 */
+#menu, #menu2{ z-index: 1;}/*.PopupCell内で指定しても効果がなかったもの */
 
 /* JSコマンド送信済み */
 .commandjs1  {
   border-width:0px;
-  color: blue;
+  color: #553311;
   width: 100%;
   height: 100%;
   white-space : nowrap;
-  background-color: #CCFFCC;
+  background-color: transparent;
   font-size:0.9em;
 }
 /* JSコマンド未送信 */
@@ -151,7 +198,7 @@ p{margin:3px 0 3px 0;}
   width: 100%;
   height: 100%;
   white-space : nowrap;
-  background-color: #FFFFFF;
+  background-color: #301800;
   font-size:0.9em;
 }
 /********************************************************************/
@@ -192,10 +239,18 @@ TD.M {
 /********************************************************************/
 
 /* マップの各マスの設定 究想必須 */
-td.b { background-color:#FFFFFF; border-width:0px; }
+td.b { background-color:#FFCCCC; border-width:0px; }
 td.e { background-color:#0088FF; border-width:0px; }
 td.s { border-width:0px; }
 
+td.e:hover::before {
+	content:url('red.webp');
+	position: absolute;
+	pointer-events: none;
+	opacity: 0.5;
+	width: 32px;
+	height: 32px;
+}
 /* サブタイトル(究想) */
 .title2 {  font-size:medium; color: #9999FF; }
 
@@ -206,13 +261,26 @@ td.s { border-width:0px; }
 #changeInfo2 { white-space : nowrap; }
 
 /* 各島の近況  (究想)*/
-#RecentlyLog2{ white-space : nowrap; margin-left: 30px; }
+#RecentlyLog2{ 
+  white-space : nowrap;
+	height: 50vh;
+	overflow-y: scroll;
+}
+#RecentlyLog2 .big{
+	position: sticky;
+	top: 0;
+	background: #331810C0;
+}
 
 /* 順位表サブ見出し (例 TitleCellとInfoCellの中間色) (究想)*/
-.SubTCell    { background-color: #E0FFFF; text-align:center; }
+.SubTCell    {
+  background-color: inherit
+  text-align:center
+  user-select:none
+}
 
 /* 観光者通信表示欄  (例 InfoCellと同じ色) (究想)*/
-.LbbsCell    { background-color: #CCFFFF; text-align:left; }
+.LbbsCell    { background-color: inherit; text-align:left; }
 
 /* Battle Fieldの★ */
 .star {
@@ -273,7 +341,13 @@ td.s { border-width:0px; }
 .ab    { position:absolute;text-decoration:none;}
 
 /* 地形占有表 (究想)*/
-#mapStatistics{ white-space : nowrap; }
+#mapStatistics{
+	white-space : nowrap;
+	background-image : url(sacher.svg);
+	background-size : contain;
+	background-repeat : no-repeat;
+	background-position : right;
+}
 
 /* 対戦の状況 (究想トーナメント)*/
 #fightmode{ white-space : nowrap; }
@@ -283,122 +357,3 @@ td.s { border-width:0px; }
 
 /* 対戦の記録サブタイトル (究想トーナメント)*/
 #fightlogS{ white-space : nowrap; }
-
-
-/********************************************************************/
-/*  ザッハトルテ島オリジナル部分                                    */
-/********************************************************************/
-
-/*どの要素がどの部分に対応しているかはブラウザ付属の開発者ツールなどでhtmlを覗けばわかる*/
-
-a:link    { color: #EE1111;       }
-a:visited { color: #CC3333;       }
-a.M       {
-  text-shadow:none;
-  color: #A06040;
-}/*ポップアップメニューなど*/
-
-::selection{
-	text-shadow: none;
-	background: maroon;
-	color: chocolate;
-}
-body{
-  color: #EEDDCC;
-	background: #331810 none no-repeat;
-	text-shadow:
-            1px 1px 1px #331810, -1px -1px 1px #331810,
-           -1px 1px 1px #331810,  1px -1px 1px #331810;
-}
-th,td {
-  border-color:#FFCCCC;
-}
-h1   {
-	color: #A06040;
-	background-image: url('sacher.svg'), url('sacher.svg');
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right,left;
-}
-hr { border		: double #E16941 1px;}/*区切り線*/
-textarea, select, input {
-  color: #FFEEEE;
-  background-color: #553311
-}
-input[type="submit"],input[type="button"]{
-	border-color: #767676 #767676 #858585 #858585;
-	border-width: 2px;
-}
-input[type="text"],textarea{
-	border-color: #858585 #858585 #767676 #767676;
-	border-width: 2px;
-}
-input[type="checkbox"]{
-	accent-color: maroon;
-}
-/*広告欄をいじれるかどうかの実験*/
-iframe  {
-  transform: rotateY( 180deg );
-}
-#LinkFoot    {
-  background-color: transparent;
-}
-
-.title {
-	background-image: none;
-}
-.islName   { color: #FF4444;        } /* 島の名前など */
-.number    { color: #B05533;        } /* 各種表の番号など */
-.head      { color: #A06040;        } /* 各種表における見だし */
-.command   { color: #D08030;        } /* 開発計画名 */
-.disaster  { color: #EE1100;        } /* 災害 */
-.lbbsSS    { color: #C07050;        } /* 観光者通信（観光者） */
-.lbbsOW    { color: #C0583A;        } /* 観光者通信（オーナ） */
-.attention { color: #EE1100;        } /* 注意 */
-.normal    { color: #FFEEEE;        } /* 通常の文字色 */
-/* 背景色 */
-.TitleCell, .NumberCell, .NameCell, .InfoCell{ background-color: inherit;}
-.InputCell, .MapCell, .CommandCell{ background-color: transparent;}
-.PopupCell   { background-color: #553311; /*z-index: 1;*/       } /* Popup コマンド入力欄 */
-#menu, #menu2{ z-index: 1;}/*.PopupCell内で指定しても効果がなかったもの */
-.commandjs1  {
-  color: #553311;
-  background-color: transparent;
-}
-.commandjs2  {
-  background-color: #301800;
-}
-td.b { 
-  background-color:#FFCCCC; 
-}
-td.e:hover::before {
-	content:url('red.webp');
-	position: absolute;
-	pointer-events: none;
-	opacity: 0.5;
-	width: 32px;
-	height: 32px;
-}
-#RecentlyLog2{ 
-	margin-left: none;
-	height: 50vh;
-	overflow-y: scroll;
-}
-#RecentlyLog2 .big{
-	position: sticky;
-	top: 0;
-	background: #331810C0;
-}
-.SubTCell,.LbbsCell    {
-  background-color: inherit;
-  user-select:none;
-}
-.SubTCell    {
-  user-select:none;
-}
-#mapStatistics{
-	background-image : url(sacher.svg);
-	background-size : contain;
-	background-repeat : no-repeat;
-	background-position : right;
-}
